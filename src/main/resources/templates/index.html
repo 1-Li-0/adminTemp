@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../static/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<form action="/loginWithData.do">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="text" name="password"><br>
+    <input type="submit" value="登录"><input type="button" onclick="zhuce()" value="注册">
+</form>
+</body>
+<script type="text/javascript">
+    function zhuce() {
+        window.location.href = "http://localhost:8090/zhuce.do";
+    }
+</script>
+</html>
