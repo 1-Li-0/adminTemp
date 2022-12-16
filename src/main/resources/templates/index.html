@@ -6,11 +6,24 @@
     <script type="text/javascript" src="../static/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<form action="/loginWithData.do">
-    用户名：<input type="text" name="username"><br>
-    密码：<input type="text" name="password"><br>
-    <input type="submit" value="登录"><input type="button" onclick="zhuce()" value="注册">
-</form>
+<div style="margin-left: auto;margin-top: 50px;width: 950px">
+    <form action="/loginWithData.do" method="post">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="text" name="password"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="登录"></td>
+                <td><input type="button" onclick="zhuce()" value="注册"></td>
+            </tr>
+        </table>
+    </form>
+</div>
 </body>
 <script type="text/javascript">
     function zhuce() {
