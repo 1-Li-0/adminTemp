@@ -1,5 +1,6 @@
 package com.ly.admintemp.web;
 
+import com.ly.admintemp.constant.AuthConstant;
 import com.ly.admintemp.entity.User;
 import com.ly.admintemp.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -21,12 +24,13 @@ public class TempIndexPage {
     }
 
     @PostMapping("/loginWithData.do")
-    public String loginWithData(String username, String password, RedirectAttributes redirectAttributes) {
+    public String loginWithData(String username, String password, RedirectAttributes redirectAttributes, HttpSession session) {
         User user = new User();
         user.setUsername(username.trim()); //用户名不能重复
         user.setPassword(password);
         boolean b = loginService.checkUserInfo(user);
         if (b) {
+            session.setAttribute(AuthConstant.LOGIN_USER,username);
             return "success";
         }else {
             redirectAttributes.addFlashAttribute("err","用户名或者密码错误");

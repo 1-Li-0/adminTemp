@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title></title>
     <script type="text/javascript" src="../static/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
+<h5 th:text="${'欢迎，'+session.loginUser}"></h5>
 </body>
 </html>

@@ -9,14 +9,14 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 
 @Configuration
 public class AdminTempSessionConfig {
-
+/*
     @Bean
     public CookieSerializer cookieSerializer(){
         DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
         cookieSerializer.setDomainName("ly.com");
         cookieSerializer.setCookieName("LYCOOKIE");
         return cookieSerializer;
-    }
+    }*/
 
     @Bean
     public RedisSerializer<Object> springSessionDefaultRedisSerializer(){

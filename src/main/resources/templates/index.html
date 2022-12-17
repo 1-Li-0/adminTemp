@@ -20,6 +20,7 @@
             <tr>
                 <td><input type="submit" value="登录"></td>
                 <td><input type="button" onclick="zhuce()" value="注册"></td>
+                <b th:if="${err!=null}" style="color: red">[[${err}]]</b>
             </tr>
         </table>
     </form>
